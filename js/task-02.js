@@ -11,9 +11,8 @@ const ingredients = [
 
 const ingredientsList = document.querySelector("#ingredients");
 
-ingredients.forEach((ingredient) => {
-  const liEl = document.createElement("li");
-  liEl.textContent = ingredient;
-  liEl.classList.add("item");
-  ingredientsList.appendChild(liEl);
-});
+const html = ingredients
+  .map((ingredient) => `<li class="item">${ingredient}</li>`)
+  .join("");
+
+  ingredientsList.innerHTML = html;
